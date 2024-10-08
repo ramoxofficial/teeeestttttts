@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>وب رام</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: url('background-image.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3rem;
+            color: #fff;
+        }
+        .navbar {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .navbar a {
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        .plans {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .plan {
+            background-color: rgba(163, 159, 158, 0.9);
+            border-radius: 15px;
+            padding: 20px;
+            width: 200px;
+            color: #333;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="register.html">ثبت نام</a>
+        <a href="login.html">ورود</a>
+    </div>
+    <h1>وب رام، خرید سایت و دامنه</h1>
+    <div class="plans">
+        <div class="plan">
+            <h2>پلن عادی</h2>
+            <p>قیمت: 1,500,000 تومان</p>
+            <button onclick="window.location.href='buyplan1.html'">خرید</button>
+        </div>
+        <div class="plan">
+            <h2>پلن حرفه‌ای</h2>
+            <p>قیمت: 2,500,000 تومان</p>
+            <button onclick="window.location.href='buyplan2.html'">خرید</button>
+        </div>
+        <div class="plan">
+            <h2>پلن پیشرفته</h2>
+            <p>قیمت: 4,000,000 تومان</p>
+            <button onclick="window.location.href='buyplan3.html'">خرید</button>
+        </div>
+    </div>
+</body>
+</html>

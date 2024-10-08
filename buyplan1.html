@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خرید پلن عادی</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            background-color: rgba(163, 159, 158, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            width: 300px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            text-align: left;
+            margin-top: 15px;
+            font-size: 1.1rem;
+            color: black;
+        }
+        input {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+            margin-top: 5px;
+        }
+        button {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            margin-top: 20px;
+            width: 100%;
+        }
+        .continue, .register {
+            margin-top: 20px;
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 15px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .register {
+            background-color: #808080; /* رنگ توسی */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>وارد کردن اطلاعات کاربری</h2>
+        <label for="name">نام و نام خانوادگی</label>
+        <input type="text" id="name" placeholder="مثال: محمدرضا رجبی" required>
+        
+        <label for="phone">شماره تلفن</label>
+        <input type="text" id="phone" placeholder="مثال: 09123456789" required>
+        
+        <label for="email">ایمیل</label>
+        <input type="email" id="email" placeholder="مثال: example@mail.com" required>
+        
+        <button onclick="submitPlan()">خرید</button>
+        <button class="continue" onclick="continuePurchase()">ادامه خرید</button>
+        <button class="register" onclick="registerPurchase()">ثبت خرید</button>
+    </div>
+
+    <script>
+        let registeredUsers = ['example@mail.com']; // ایمیل‌های ثبت‌نام شده
+
+        function isUserRegistered(email) {
+            return registeredUsers.includes(email);
+        }
+
+        function submitPlan() {
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+
+            if (!isUserRegistered(email)) {
+                alert('لطفا ابتدا ثبت‌نام کنید.');
+                window.location.href = 'register.html';
+                return;

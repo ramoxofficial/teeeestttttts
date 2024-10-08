@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ثبت‌نام</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            background-color: rgba(163, 159, 158, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            width: 300px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            text-align: left;
+            margin-top: 15px;
+            font-size: 1.1rem;
+            color: black;
+        }
+        input {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+            margin-top: 5px;
+        }
+        button {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            margin-top: 20px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>ثبت‌نام</h2>
+        <label for="register-name">نام و نام خانوادگی</label>
+        <input type="text" id="register-name" placeholder="مثال: محمدرضا رجبی" required>
+        
+        <label for="register-email">ایمیل</label>
+        <input type="email" id="register-email" placeholder="مثال: example@mail.com" required>
+        
+        <button onclick="registerUser()">ثبت‌نام</button>
+    </div>
+
+    <script>
+        let registeredUsers = []; // لیست ایمیل‌های ثبت‌نام شده
+
+        function registerUser() {
+            const name = document.getElementById('register-name').value;
+            const email = document.getElementById('register-email').value;
+
+            if (name && email) {
+                registeredUsers.push(email);
+                alert("ثبت‌نام با موفقیت انجام شد! حالا می‌توانید خرید کنید.");
+                window.location.href = 'index.html'; // بازگشت به صفحه اصلی
+            } else {
+                alert('لطفا تمامی اطلاعات را وارد کنید.');
+            }
+        }
+    </script>
+</body>
+</html>
